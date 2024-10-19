@@ -29,4 +29,17 @@ export class AppService {
 
     return filteredRecords; 
   }
+
+  reverse(input: string): string {
+    const reversed = input.split('').reverse();
+
+    const vowelsUppercased = reversed.map(char => {
+      const isVowel = 'aeiou'.includes(char.toLowerCase());
+      return isVowel ? char.toUpperCase() : char;
+    });
+    
+    return vowelsUppercased.join('');
+  }
+
+
 }
