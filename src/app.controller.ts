@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { CountryRecord } from './interfaces/countries';
 import { GetCountriesQueryDto } from './dto/getCountriesQuery.dto';
 import { ReverseStringDto } from './dto/reverseParam.dto';
+import { AppendStringsDto } from './dto/appendStrings.dto';
 
 @Controller()
 export class AppController {
@@ -24,5 +25,11 @@ export class AppController {
   getReversed(@Param() params: ReverseStringDto): string {
     const { param } = params;
     return this.appService.reverse(param);
+  }
+
+  @Get('/append')
+  appendStrings(@Query() query: AppendStringsDto): string[] {
+    const { start, end } = query;
+    return this.appService.append(start, end);
   }
 }
