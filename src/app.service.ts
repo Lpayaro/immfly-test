@@ -8,7 +8,18 @@ export class AppService {
   COUNTRIES_URL = 'https://api.jsonbin.io/v3/b/5f69afbe65b18913fc510ce8';
 
   getHello(): string {
-    return 'Hello World!';
+    return `Hello! This is a simple NestJS application for an Immfly backed test for Lorenzo P!
+Feel free to explore the following endpoints:
+
+- GET /countries - List all countries
+- GET /countries?filter={filter} - Filter countries by name or code
+- GET /countries?order={asc|desc} - Order countries by VAT
+- GET /reverse/{text} - Reverse a string and capitalize vowels
+- GET /append?start={start}&end={end} - Append to a simple array
+
+Example supposing immfly-test.onrender.com as host: <a href="https://immfly-test.onrender.com/reverse/chocolate">https://immfly-test.onrender.com/reverse/chocolate</a>
+
+Enjoy exploring the API!`.replace(/\n/g, '<br>');
   }
 
   async getCountries(
